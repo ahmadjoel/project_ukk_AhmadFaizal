@@ -47,6 +47,7 @@
                 <a class="nav-link" href="{{ url('layout') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
+                    
             </li>
 
             <!-- Divider -->
@@ -67,9 +68,9 @@
             </li>
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="pelanggan">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
+                    <span>Pelanggan</span></a>
             </li>
 
             <!-- Divider -->
@@ -105,10 +106,8 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        
-                    </div>
+                    @yield('judul')
+                    
 
                     <!-- Content Row -->
                     <div class="row">
@@ -117,6 +116,7 @@
                         </div>
 
                     </div>
+                   
                     @yield('index')
                 </div>
                 <!-- /.container-fluid -->

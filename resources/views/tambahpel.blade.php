@@ -1,5 +1,5 @@
 @extends('index')
-@section('index')
+@section('index')   
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,39 +14,29 @@
         <div class="card shadow mt-4">
             <div class="card-header d-flex text-bg-primary bg-gradient justify-content-between">
                 <h4 class="card-title">Data</h4>
-                <a href="{{ ('pbarang') }}" class="btn btn-light">
+                <a href="{{ ('pelanggan') }}" class="btn btn-light">
                     <i class="bi bi-caret-left-square-fill"></i>&nbsp;Kembali
                 </a>
             </div>
             <div class="card-body">
-               
-                @foreach ($data as $item)
-                    
-                <form id="formAuthentication" class="mb-3" method="POST" ">
+                <form action="{{url('tambahpel')}}" method="post">
                     @csrf
                     <div class="mb-3 row">
-                        <label for="nama" class="col-form-label col-2">Nama Produk</label>
+                        <label for="nama" class="col-form-label col-2">Nama Pelanggan</label>
                         <div class="col-10">
-                            <input type="text" class="form-control" name="nama_produk"
-                            value="{{ $item->nama_produk }}" autofocus
-                            >
-
+                            <input type="text" class="form-control" name="nama_pelanggan">
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="harga" class="col-form-label col-2">Harga</label>
+                        <label for="alamat" class="col-form-label col-2">Alamat</label>
                         <div class="col-10">
-                            <input type="number" class="form-control" name="harga"
-                            value="{{ $item->harga }}" autofocus
-                            >
+                            <input type="text" class="form-control" name="alamat">
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="stok" class="col-form-label col-2">Stok</label>
+                        <label for="nomor_telepon" class="col-form-label col-2">Nomor Telpon</label>
                         <div class="col-10">
-                            <input type="number" class="form-control" name="stok"
-                            value="{{ $item->stok }}" autofocus
-                            >
+                            <input type="number" class="form-control" name="nomor_telepon">
                         </div>
                     </div>
                     
@@ -58,7 +48,6 @@
                         </button>
                     </div>
                 </form>
-                @endforeach
             </div>
         </div>
     </div>

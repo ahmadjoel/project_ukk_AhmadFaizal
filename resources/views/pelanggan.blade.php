@@ -1,7 +1,7 @@
 @extends('index')
 @section('judul')
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Pendataan Barang</h1>
+    <h1 class="h3 mb-0 text-gray-800">Data Pelanggan</h1>
     
 </div>
 @endsection
@@ -10,8 +10,8 @@
     <div class="container">
         <div class="card shadow mt-4">
             <div class="card-header d-flex text-bg-primary bg-gradient justify-content-between">
-                <h4 class="card-title">Data Barang</h4>
-                <a href="{{url('tambah')}}" class="btn btn-light">
+                <h4 class="card-title">Data Pelanggan</h4>
+                <a href="{{url('tambahpel')}}" class="btn btn-light">
                     <i class="bi bi-plus-circle-fill"></i> Tambah
                 </a>
             </div>
@@ -20,24 +20,24 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Nama Produk</th>
-                            <th>Harga</th>
-                            <th>Stok</th>
+                            <th>Nama Pelanggan</th>
+                            <th>Alamat</th>
+                            <th>No Telpon</th>
                             <th >Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($data as $item)
                         <tr>
-                            <td>{{$item->produkid}}</td>
-                            <td>{{$item->nama_produk}}</td>
-                            <td>Rp{{$item->harga}}</td>
-                            <td>{{$item->stok}}</td>
+                            <td>{{$item->pelanggan_id}}</td>
+                            <td>{{$item->nama_pelanggan}}</td>
+                            <td>{{$item->Alamat}}</td>
+                            <td>{{$item->nomor_telepon}}</td>
                             
                             
                             
                             <td>
-                                <a href="{{ url('edit/'.$item->produkid) }}" class="btn btn-success btn-sm">
+                                <a href="{{ url('editpel/'.$item->pelanggan_id) }}" class="btn btn-success btn-sm">
                                     <i class="bi bi-pencil-square"></i>
                                 </a>
                                 <a href="#" class="btn btn-danger btn-sm">
